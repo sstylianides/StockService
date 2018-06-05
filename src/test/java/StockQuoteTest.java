@@ -3,6 +3,10 @@ import org.junit.Test;
 
 public class StockQuoteTest {
 
+    /**
+     * test GetSymbol
+     * @result will return the correct stockQuote
+     */
     @Test
     public void testGetSymbol(){
         StockQuote stockQuote = new StockQuote("SPY", 200.1);
@@ -11,6 +15,10 @@ public class StockQuoteTest {
 
     }
 
+    /**
+     * test GetValue
+     * @result will return the correct value
+     */
     @Test
     public void testGetValue(){
         StockQuote stockQuote = new StockQuote("SPY", 200.1);
@@ -19,6 +27,10 @@ public class StockQuoteTest {
     }
 
 
+    /**
+     * negative test for negative value
+     * @result will return exception
+     */
     @Test (expected = java.lang.IllegalArgumentException.class)
     public void testThrowsWhenValueNegative(){
         new StockQuote("SPY", -1.00);
@@ -26,18 +38,33 @@ public class StockQuoteTest {
     }
 
 
+
+    /**
+     * negative test for zero value
+     * @result will return exception
+     */
     @Test (expected = java.lang.IllegalArgumentException.class)
     public void testThrowsWhenValueZero(){
         new StockQuote("SPY", 0.00);
 
     }
 
+
+    /**
+     * negative test for null symbol
+     * @result will return exception
+     */
     @Test (expected = java.lang.IllegalArgumentException.class)
     public void testThrowsWhenSymbolNull(){
         new StockQuote(null, 1.00);
 
     }
 
+
+    /**
+     * negative test for empty symbol
+     * @result will return exception
+     */
     @Test (expected = java.lang.IllegalArgumentException.class)
     public void testThrowsWhenSymbolEmpty(){
         new StockQuote("", 1.00);
