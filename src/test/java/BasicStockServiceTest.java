@@ -62,5 +62,7 @@ public class BasicStockServiceTest {
 
     }
 
+    //TODO: write a positive and negative test for List<StockQuote> getQuote
+
 
 }
