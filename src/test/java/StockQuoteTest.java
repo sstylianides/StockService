@@ -74,5 +74,4 @@ public class StockQuoteTest {
     }
 
 
-    //TODO: write similar test to above after figuring our whether I need another constructor in StockQuote class
 }

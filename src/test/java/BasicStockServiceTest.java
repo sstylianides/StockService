@@ -85,7 +85,7 @@ public class BasicStockServiceTest {
         untilDate.setTime(parser.parse(until));
 
 
-        List<StockQuote> stockQuote = stockService.getQuote(symbol, fromDate, untilDate);
+        List<StockQuote> stockQuote = stockService.getQuote(symbol, fromDate, untilDate, IntervalEnum.QUARTERLY);
         Assert.assertArrayEquals(stockQuote.toArray(), stockQuote.toArray());
     }
 
@@ -113,8 +113,8 @@ public class BasicStockServiceTest {
         untilDate.setTime(parser.parse(until));
 
 
-        List<StockQuote> stockQuote = stockService.getQuote(symbol, fromDate, untilDate);
-        List<StockQuote> stockQuoteTest = stockService.getQuote(symboltest, fromDate, untilDate);
+        List<StockQuote> stockQuote = stockService.getQuote(symbol, fromDate, untilDate, IntervalEnum.DAILY);
+        List<StockQuote> stockQuoteTest = stockService.getQuote(symboltest, fromDate, untilDate, IntervalEnum.DAILY);
 
 
         Assert.assertArrayEquals(stockQuote.toArray(), stockQuoteTest.toArray());

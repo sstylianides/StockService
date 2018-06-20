@@ -2,7 +2,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Main {
+public class StockServiceApp {
 
     public static void main(String[] args) throws ParseException {
 
@@ -19,7 +19,7 @@ public class Main {
         StockService stockService = StockServiceFactory.getService();
 
         System.out.println(stockService.getQuote(symbol));
-        System.out.println(stockService.getQuote(symbol, fromDate, untilDate));
+        System.out.println(stockService.getQuote(symbol, fromDate, untilDate, IntervalEnum.QUARTERLY));
 
 
 

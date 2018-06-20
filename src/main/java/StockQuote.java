@@ -1,12 +1,15 @@
+import org.apache.http.annotation.Immutable;
+
+import javax.validation.constraints.NotNull;
 import java.util.Calendar;
 
-public class StockQuote{
+@Immutable
+public class StockQuote {
 
     private final String symbol;
     private final double value;
     private final Calendar date;
 
-    //question for Justin: do I need 2 constructors since something was ad?
 
 
     public Calendar getDate() {
@@ -23,8 +26,9 @@ public class StockQuote{
      * @param value takes in a price for the symbol
      * @param date
      * @return getters return value and symbol of StockQuote Object
+     * @throws IllegalArgumentException if symbol is null or empty, or date is null
      */
-    public StockQuote(String symbol, double value, Calendar date) {
+    public StockQuote(@NotNull String symbol, double value, @NotNull Calendar date) {
 
         if(value <= 0){
             throw new IllegalArgumentException("Stock value must be positive");
