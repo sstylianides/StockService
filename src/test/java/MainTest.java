@@ -11,7 +11,7 @@ public class MainTest {
      * @result will return the correct Main
      */
     @Test
-    public void testMain() throws ParseException {
+    public void testMain() throws ParseException, StockServiceException {
         String symbol = "QQQ";
         String from = "1/11/1998";
         String until = "12/1/2001";
@@ -24,7 +24,7 @@ public class MainTest {
         Calendar untilDate = Calendar.getInstance();
         untilDate.setTime(parser.parse(until));
 
-        StockServiceApp.main(new String[] {symbol, from, until});
+        StockQuoteApp.main(new String[] {symbol, from, until});
     }
 
 
@@ -33,7 +33,7 @@ public class MainTest {
      * @result will return exception
      */
     @Test(expected = NullPointerException.class)
-    public void testMainNegative() throws ParseException {
-        StockServiceApp.main(null);
+    public void testMainNegative() throws ParseException, StockServiceException {
+        StockQuoteApp.main(null);
     }
 }

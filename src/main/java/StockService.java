@@ -3,7 +3,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Calendar;
 import java.util.List;
 
-public interface StockService {
+public interface StockService{
     /**
      * Return the current price for a share of stock  for the
      * given symbol
@@ -11,7 +11,7 @@ public interface StockService {
      * quote for e.g. APPL for APPLE
      * @return a  <CODE>BigDecimal</CODE> instance
      */
-    StockQuote getQuote(@NotNull String symbol);
+    StockQuote getQuote(@NotNull String symbol) throws StockServiceException;
 
 
 
@@ -28,7 +28,7 @@ public interface StockService {
      */
 
 
-    List<StockQuote> getQuote(@NotNull String symbol, @NotNull Calendar from, @NotNull Calendar until, IntervalEnum interval);
+    List<StockQuote> getQuote(@NotNull String symbol, @NotNull Calendar from, @NotNull Calendar until, IntervalEnum interval) throws StockServiceException;
 
 
 }

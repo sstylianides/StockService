@@ -2,9 +2,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class StockServiceApp {
+public class StockQuoteApp {
 
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) throws ParseException, StockServiceException {
 
         String symbol = args[0];
         String from = args[1];

@@ -2,6 +2,7 @@
 
 import javax.validation.constraints.NotNull;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
@@ -24,7 +25,7 @@ public class BasicStockService implements StockService{
             throw new IllegalArgumentException("Stock Symbol must be a non-empty non-null string");
         }
 
-        return new StockQuote(symbol, 274.90, Calendar.getInstance());
+        return new StockQuote(symbol, BigDecimal.valueOf(274.90), Calendar.getInstance());
     }
 
 
@@ -55,7 +56,7 @@ public class BasicStockService implements StockService{
         if(from.after(until)){
             throw new IllegalArgumentException("From date cannot be after until");
         }
-        return Arrays.asList(new StockQuote(symbol, 275.45, from), new StockQuote(symbol, 300.10, until));
+        return Arrays.asList(new StockQuote(symbol, BigDecimal.valueOf(275.45), from), new StockQuote(symbol, BigDecimal.valueOf(300.10), until));
 
     }
 }

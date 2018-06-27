@@ -1,6 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.util.Calendar;
 
 public class StockQuoteTest {
@@ -11,7 +12,7 @@ public class StockQuoteTest {
      */
     @Test
     public void testGetSymbol(){
-        StockQuote stockQuote = new StockQuote("SPY", 200.1, Calendar.getInstance());
+        StockQuote stockQuote = new StockQuote("SPY", BigDecimal.valueOf(200.1), Calendar.getInstance());
 
         Assert.assertEquals( "SPY", stockQuote.getSymbol());
 
@@ -23,9 +24,9 @@ public class StockQuoteTest {
      */
     @Test
     public void testGetValue(){
-        StockQuote stockQuote = new StockQuote("SPY", 200.1, Calendar.getInstance());
+        StockQuote stockQuote = new StockQuote("SPY", BigDecimal.valueOf(200.1), Calendar.getInstance());
 
-        Assert.assertEquals(200.1, stockQuote.getValue(), 0.001);
+        Assert.assertEquals(BigDecimal.valueOf(200.1), stockQuote.getValue());
     }
 
 
@@ -35,7 +36,7 @@ public class StockQuoteTest {
      */
     @Test (expected = java.lang.IllegalArgumentException.class)
     public void testThrowsWhenValueNegative(){
-        new StockQuote("SPY", -1.00, Calendar.getInstance());
+        new StockQuote("SPY", BigDecimal.valueOf(-1.00), Calendar.getInstance());
 
     }
 
@@ -47,7 +48,7 @@ public class StockQuoteTest {
      */
     @Test (expected = java.lang.IllegalArgumentException.class)
     public void testThrowsWhenValueZero(){
-        new StockQuote("SPY", 0.00, Calendar.getInstance());
+        new StockQuote("SPY", BigDecimal.ZERO, Calendar.getInstance());
 
     }
 
@@ -58,7 +59,7 @@ public class StockQuoteTest {
      */
     @Test (expected = java.lang.IllegalArgumentException.class)
     public void testThrowsWhenSymbolNull(){
-        new StockQuote(null, 1.00, Calendar.getInstance());
+        new StockQuote(null, BigDecimal.ONE, Calendar.getInstance());
 
     }
 
@@ -69,7 +70,7 @@ public class StockQuoteTest {
      */
     @Test (expected = java.lang.IllegalArgumentException.class)
     public void testThrowsWhenSymbolEmpty(){
-        new StockQuote("", 1.00, Calendar.getInstance());
+        new StockQuote("", BigDecimal.ONE, Calendar.getInstance());
 
     }
 

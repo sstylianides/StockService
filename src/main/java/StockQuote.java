@@ -1,14 +1,19 @@
 import org.apache.http.annotation.Immutable;
 
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Objects;
 
 @Immutable
 public class StockQuote {
 
     private final String symbol;
-    private final double value;
+    private final BigDecimal value;
     private final Calendar date;
+
+    public static SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
 
 
 
@@ -28,10 +33,10 @@ public class StockQuote {
      * @return getters return value and symbol of StockQuote Object
      * @throws IllegalArgumentException if symbol is null or empty, or date is null
      */
-    public StockQuote(@NotNull String symbol, double value, @NotNull Calendar date) {
+    public StockQuote(@NotNull String symbol, @NotNull BigDecimal value, @NotNull Calendar date) {
 
-        if(value <= 0){
-            throw new IllegalArgumentException("Stock value must be positive");
+        if(value == null || value.compareTo(BigDecimal.ZERO) <= 0){
+            throw new IllegalArgumentException("Stock value must be non-null & positive");
         }
         if(symbol == null || symbol.isEmpty()){
             throw new IllegalArgumentException("Stock Symbol must be a non-empty non-null string");
@@ -49,7 +54,7 @@ public class StockQuote {
     }
 
 
-    public double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
@@ -58,8 +63,23 @@ public class StockQuote {
         return "StockQuote{" +
                 "symbol='" + symbol + '\'' +
                 ", value=" + value +
-                ", date=" + date +
+                ", date=" + formatter.format(date.getTime()) +
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        StockQuote that = (StockQuote) o;
+        return Objects.equals(symbol, that.symbol) &&
+                Objects.equals(value, that.value) &&
+                Objects.equals(date, that.date);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(symbol, value, date);
+    }
 }
