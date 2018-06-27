@@ -6,8 +6,6 @@ import java.util.Calendar;
 
 public class MainTest {
 
-    //TODO: write positive and negative Main Test
-
     /**
      * test main
      * @result will return the correct Main
@@ -26,7 +24,7 @@ public class MainTest {
         Calendar untilDate = Calendar.getInstance();
         untilDate.setTime(parser.parse(until));
 
-        Main.main(new String[] {symbol, from, until});
+        StockServiceApp.main(new String[] {symbol, from, until});
     }
 
 
@@ -36,6 +34,6 @@ public class MainTest {
      */
     @Test(expected = NullPointerException.class)
     public void testMainNegative() throws ParseException {
-        Main.main(null);
+        StockServiceApp.main(null);
     }
 }

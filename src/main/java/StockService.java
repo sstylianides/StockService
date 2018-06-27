@@ -1,3 +1,5 @@
+import javax.validation.constraints.NotNull;
+
 import java.util.Calendar;
 import java.util.List;
 
@@ -9,16 +11,24 @@ public interface StockService {
      * quote for e.g. APPL for APPLE
      * @return a  <CODE>BigDecimal</CODE> instance
      */
-    StockQuote getQuote(String symbol);
+    StockQuote getQuote(@NotNull String symbol);
+
+
+
     /**
-     * Get a historical list of stock quotes for the provided
-     * symbol
-     * @param symbol the stock symbol to search for
-     * @param from the date of the first stock quote
-     * @param until  the date of the last stock quote
-     * @return a list of StockQuote instances.
-     * One for each day in the range specified.
+     *
+     * Get a historical list of stock quotes for the provide symbol
+     * This method will return one StockQuote per interval specified. *
+     * @param symbol t​he stock symbol to search for
+     * @param from t​he date of the first stock quote
+     * @param until​ t​he date of the last stockquote
+     * @param interval ­​the number of StockQuotes to get. E.g. if Interval.DAILY was specified
+     * one StockQuote per day will be returned.
+     * @return a​list of StockQuote instances. One for each day in the range specified.
      */
-    List<StockQuote> getQuote(String symbol, Calendar from,
-                              Calendar until);
+
+
+    List<StockQuote> getQuote(@NotNull String symbol, @NotNull Calendar from, @NotNull Calendar until, IntervalEnum interval);
+
+
 }
