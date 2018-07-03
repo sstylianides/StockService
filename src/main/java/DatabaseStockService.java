@@ -28,7 +28,7 @@ public class DatabaseStockService implements StockService {
      */
     @Override
     public StockQuote getQuote(String symbol) throws StockServiceException {
-        // todo - this is a pretty lame implementation why?
+
         List<StockQuote> stockQuotes = null;
         try {
             Connection connection = DatabaseUtils.getConnection();

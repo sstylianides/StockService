@@ -16,7 +16,7 @@ public class StockQuoteApp {
         Calendar untilDate = Calendar.getInstance();
         untilDate.setTime(parser.parse(until));
 
-        StockService stockService = StockServiceFactory.getService();
+        StockService stockService = ServiceFactory.getStockService();
 
         System.out.println(stockService.getQuote(symbol));
         System.out.println(stockService.getQuote(symbol, fromDate, untilDate, IntervalEnum.QUARTERLY));

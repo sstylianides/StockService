@@ -1,7 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-public class StockServiceFactoryTest {
+public class ServiceFactoryTest {
 
     /**
      * test GetService to make sure that object is not null
@@ -9,7 +9,7 @@ public class StockServiceFactoryTest {
      */
     @Test
     public void testGetService(){
-        StockService stockService = StockServiceFactory.getService();
+        StockService stockService = ServiceFactory.getStockService();
         Assert.assertNotNull(stockService);
 
 
