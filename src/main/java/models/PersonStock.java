@@ -1,3 +1,5 @@
+package models;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -11,7 +13,7 @@ public class PersonStock {
 
 
     /**
-     * Create a PersonStock that needs to be initialized
+     * Create a models.PersonStock that needs to be initialized
      */
     public PersonStock() {
         // this empty constructor is required by hibernate framework
@@ -19,7 +21,7 @@ public class PersonStock {
     }
 
     /**
-     * Create a valid PersonStock
+     * Create a valid models.PersonStock
      *
      * @param person the person to assign the hobby to
      * @param stock  the stock to associate the person with
@@ -32,7 +34,7 @@ public class PersonStock {
 
     /**
      *
-     * @return get the Person associated with this stock
+     * @return get the models.Person associated with this stock
      */
     @ManyToOne
     @JoinColumn(name = "person", referencedColumnName = "ID", nullable = false)
@@ -41,7 +43,7 @@ public class PersonStock {
     }
 
     /**
-     * Specify the Person associated with the Stock.
+     * Specify the models.Person associated with the Stock.
      *
      * @param person a person instance
      */

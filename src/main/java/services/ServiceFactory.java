@@ -1,8 +1,10 @@
+package services;
+
 public class ServiceFactory {
 
 
     /**
-     * @return returns a new BasicStockService
+     * @return returns a new services.BasicStockService
      *
      *
      */

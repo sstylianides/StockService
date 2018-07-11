@@ -1,5 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
+import services.ServiceFactory;
+import services.StockService;
 
 public class ServiceFactoryTest {
 

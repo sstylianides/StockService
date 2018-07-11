@@ -1,3 +1,5 @@
+package models;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,7 +8,7 @@ import javax.persistence.Table;
 import java.sql.Timestamp;
 
 /**
- * Models the Person table
+ * Models the models.Person table
  */
 @Entity
 @Table(name="people")
@@ -121,7 +123,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "models.Person{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +

@@ -1,4 +1,5 @@
 import org.junit.Test;
+import services.StockServiceException;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

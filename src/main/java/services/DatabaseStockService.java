@@ -1,3 +1,6 @@
+package services;
+
+import models.StockQuote;
 import util.DatabaseConnectionException;
 import util.DatabaseUtils;
 
@@ -9,7 +12,7 @@ import java.util.Calendar;
 import java.util.List;
 
 /**
- * An implementation of the StockService interface that gets
+ * An implementation of the services.StockService interface that gets
  * stock data from a database.
  */
 public class DatabaseStockService implements StockService {
@@ -61,7 +64,7 @@ public class DatabaseStockService implements StockService {
      * @param symbol the stock symbol to search for
      * @param from   the date of the first stock quote
      * @param until  the date of the last stock quote
-     * @return a list of StockQuote instances
+     * @return a list of models.StockQuote instances
      * @throws   StockServiceException if using the service generates an exception.
      * If this happens, trying the service may work, depending on the actual cause of the
      * error.

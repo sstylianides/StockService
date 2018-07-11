@@ -1,6 +1,10 @@
+import models.Person;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import services.PersonService;
+import services.ServiceFactory;
+import services.StockServiceException;
 import util.DatabaseInitializationException;
 import util.DatabaseUtils;
 
@@ -11,7 +15,7 @@ import java.util.List;
 public class DatabasePersonServiceTest {
 
     /**
-     * Setup a new BasicStockService
+     * Setup a new services.BasicStockService
      */
     @Before
     public void setup() throws DatabaseInitializationException {
@@ -46,7 +50,7 @@ public class DatabasePersonServiceTest {
     }
 
     @Test
-    public void testGetStocks() throws StockServiceException{
+    public void testGetStocks() throws StockServiceException {
         PersonService personService = ServiceFactory.getPersonService();
 
         Person person1 = new Person();

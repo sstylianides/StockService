@@ -1,3 +1,8 @@
+import services.IntervalEnum;
+import services.ServiceFactory;
+import services.StockService;
+import services.StockServiceException;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

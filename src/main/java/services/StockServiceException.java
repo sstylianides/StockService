@@ -1,5 +1,7 @@
+package services;
+
 /**
- * Used to signal a problem with the StockService.
+ * Used to signal a problem with the services.StockService.
  */
 public class StockServiceException extends Exception {
 

@@ -1,3 +1,7 @@
+package services;
+
+import models.Person;
+import models.PersonStock;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -14,7 +18,7 @@ public class DatabasePersonService implements PersonService {
     /**
      * Get a list of all people
      *
-     * @return a list of Person instances
+     * @return a list of models.Person instances
      */
     @Override
     @SuppressWarnings("unchecked")
@@ -37,7 +41,7 @@ public class DatabasePersonService implements PersonService {
             if (transaction != null && transaction.isActive()) {
                 transaction.rollback();  // close transaction
             }
-            throw new StockServiceException("Could not get Person data. " + e.getMessage(), e);
+            throw new StockServiceException("Could not get models.Person data. " + e.getMessage(), e);
         } finally {
             if (transaction != null && transaction.isActive()) {
                 transaction.commit();
@@ -82,7 +86,7 @@ public class DatabasePersonService implements PersonService {
     }
 
     /**
-     * Add a new person or update an existing Person's data
+     * Add a new person or update an existing models.Person's data
      *
      * @param person a person object to either update or create
      */

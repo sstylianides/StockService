@@ -1,3 +1,7 @@
+package services;
+
+import models.StockQuote;
+
 import javax.validation.constraints.NotNull;
 
 import java.util.Calendar;
@@ -18,13 +22,13 @@ public interface StockService{
     /**
      *
      * Get a historical list of stock quotes for the provide symbol
-     * This method will return one StockQuote per interval specified. *
+     * This method will return one models.StockQuote per interval specified. *
      * @param symbol t​he stock symbol to search for
      * @param from t​he date of the first stock quote
      * @param until​ t​he date of the last stockquote
      * @param interval ­​the number of StockQuotes to get. E.g. if Interval.DAILY was specified
-     * one StockQuote per day will be returned.
-     * @return a​list of StockQuote instances. One for each day in the range specified.
+     * one models.StockQuote per day will be returned.
+     * @return a​list of models.StockQuote instances. One for each day in the range specified.
      */
 
 

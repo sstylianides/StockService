@@ -1,6 +1,9 @@
+import models.StockQuote;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import services.BasicStockService;
+import services.IntervalEnum;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -13,7 +16,7 @@ public class BasicStockServiceTest {
 
 
     /**
-     * Setup a new BasicStockService
+     * Setup a new services.BasicStockService
      */
     @Before
     public void setup() {

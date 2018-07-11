@@ -1,4 +1,6 @@
+package services;
 
+import models.StockQuote;
 
 import javax.validation.constraints.NotNull;
 
@@ -11,11 +13,11 @@ import java.util.List;
 public class BasicStockService implements StockService{
 
     /**
-     * Returns a new StockQuote object when getQuote is called
+     * Returns a new models.StockQuote object when getQuote is called
      * first checks if symbol symbol is null or is empty
      * throws an exception if symbol is empty or null
      * @param symbol takes in a stock ticker symbol
-     * @return returns a StockQuote object
+     * @return returns a models.StockQuote object
      * @throws IllegalArgumentException if symbol is null or empty
      */
 
@@ -30,14 +32,14 @@ public class BasicStockService implements StockService{
 
 
     /**
-     * Returns a new StockQuote object when getQuote is called
+     * Returns a new models.StockQuote object when getQuote is called
      * first checks if symbol symbol is null or is empty
      * throws an exception if symbol is empty or null
      * @param symbol takes in a stock ticker symbol
      * @param from takes in a Calendar object
      * @param until takes in a Calendar object
      * @param interval is the time period that should be returned
-     * @return returns a StockQuote object
+     * @return returns a models.StockQuote object
      * @throws IllegalArgumentException if symbol is null or empty, from or until is null, until is later than today, or
      * from is after until
      */

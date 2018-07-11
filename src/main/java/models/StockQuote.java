@@ -1,36 +1,34 @@
-import org.apache.http.annotation.Immutable;
+package models;
 
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Objects;
 
-@Immutable
+@Entity
+@Table(name="quotes")
 public class StockQuote {
 
-    private final String symbol;
-    private final BigDecimal value;
-    private final Calendar date;
+
+    private int id;
+    private String symbol;
+    private BigDecimal value;
+    private Calendar date;
 
     public static SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
 
 
-
-    public Calendar getDate() {
-        return date;
-    }
-
-
     /**
-     * StockQuote constructor with getters for symbol and value
+     * models.StockQuote constructor with getters for symbol and value
      * first checks if symbol symbol is null or is empty
      * throws an exception if symbol is empty or null
      * throws an exception if value is equal or less than zero
      * @param symbol takes in a stock ticker symbol
      * @param value takes in a price for the symbol
      * @param date
-     * @return getters return value and symbol of StockQuote Object
+     * @return getters return value and symbol of models.StockQuote Object
      * @throws IllegalArgumentException if symbol is null or empty, or date is null
      */
     public StockQuote(@NotNull String symbol, @NotNull BigDecimal value, @NotNull Calendar date) {
@@ -49,19 +47,53 @@ public class StockQuote {
         this.date = date;
     }
 
+
+    @Id
+    @Column(name = "ID", nullable = false, insertable = true, updatable = true)
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Basic
+    @Column(name = "symbol", nullable = false, insertable = true, updatable = true, length = 256)
     public String getSymbol() {
         return symbol;
     }
 
+    public void setSymbol(String symbol){
+        this.symbol = symbol;
+    }
 
+    @Basic
+    @Column(name = "price", nullable = false, insertable = true, updatable = true)
     public BigDecimal getValue() {
         return value;
+    }
+
+    public void setValue(BigDecimal value){
+        this.value = value;
+    }
+
+    @Basic
+    @Column(name = "time", nullable = false, insertable = true, updatable = true)
+    public Calendar getDate() {
+
+        return date;
+    }
+
+    public void setDate (Calendar date){
+        this.date = date;
     }
 
     @Override
     public String toString() {
         return "StockQuote{" +
-                "symbol='" + symbol + '\'' +
+                "id=" + id +
+                ", symbol='" + symbol + '\'' +
                 ", value=" + value +
                 ", date=" + formatter.format(date.getTime()) +
                 '}';
@@ -72,7 +104,8 @@ public class StockQuote {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         StockQuote that = (StockQuote) o;
-        return Objects.equals(symbol, that.symbol) &&
+        return id == that.id &&
+                Objects.equals(symbol, that.symbol) &&
                 Objects.equals(value, that.value) &&
                 Objects.equals(date, that.date);
     }
@@ -80,6 +113,6 @@ public class StockQuote {
     @Override
     public int hashCode() {
 
-        return Objects.hash(symbol, value, date);
+        return Objects.hash(id, symbol, value, date);
     }
 }

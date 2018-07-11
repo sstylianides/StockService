@@ -1,3 +1,7 @@
+package services;
+
+import models.Person;
+
 import java.util.List;
 
 public interface PersonService {
@@ -5,7 +9,7 @@ public interface PersonService {
     /**
      * Get a list of all people
      *
-     * @return a list of Person instances
+     * @return a list of models.Person instances
      * @throws StockServiceException if a service can not read or write the requested data
      *                                    or otherwise perform the requested operation.
      */
@@ -27,7 +31,7 @@ public interface PersonService {
 
 
     /**
-     * Add a new person or update an existing Person's data
+     * Add a new person or update an existing models.Person's data
      *
      * @param person a person object to either update or create
      * @throws StockServiceException if a service can not read or write the requested data
