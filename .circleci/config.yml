@@ -8,6 +8,12 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/openjdk:8-jdk
+      - image: circleci/mysql:latest-ram
+  environment:
+      - MYSQL_ROOT_PASSWORD: demonstrate420
+      - MYSQL_DATABASE: stocks
+      - MYSQL_USER: stocks
+      - MYSQL_PASSWORD: demonstrate420
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -31,6 +37,7 @@ jobs:
           - v1-dependencies-
 
       - run: mvn dependency:go-offline
+      - run: sudo apt install -y mysql-client
 
       - save_cache:
           paths:
