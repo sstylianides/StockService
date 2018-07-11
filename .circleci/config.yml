@@ -12,8 +12,6 @@ jobs:
     environment:
       - MYSQL_ROOT_PASSWORD: demonstrate420
       - MYSQL_DATABASE: stocks
-      - MYSQL_USER: stocks
-      - MYSQL_PASSWORD: demonstrate420
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
