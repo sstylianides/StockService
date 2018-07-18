@@ -3,13 +3,14 @@ import services.ServiceFactory;
 import services.StockService;
 import services.StockServiceException;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class StockQuoteApp {
 
-    public static void main(String[] args) throws ParseException, StockServiceException {
+    public static void main(String[] args) throws ParseException, StockServiceException, IOException {
 
         String symbol = args[0];
         String from = args[1];

@@ -69,5 +69,11 @@
             <version>1.0.1.Final</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.yahoofinance-api</groupId>
+            <artifactId>YahooFinanceAPI</artifactId>
+            <version>3.13.0</version>
+        </dependency>
+
     </dependencies>
 </project>

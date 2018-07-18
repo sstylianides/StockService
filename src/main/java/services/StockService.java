@@ -4,6 +4,7 @@ import models.StockQuote;
 
 import javax.validation.constraints.NotNull;
 
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public interface StockService{
      * quote for e.g. APPL for APPLE
      * @return a  <CODE>BigDecimal</CODE> instance
      */
-    StockQuote getQuote(@NotNull String symbol) throws StockServiceException;
+    StockQuote getQuote(@NotNull String symbol) throws StockServiceException, IOException;
 
 
 
@@ -32,7 +33,7 @@ public interface StockService{
      */
 
 
-    List<StockQuote> getQuote(@NotNull String symbol, @NotNull Calendar from, @NotNull Calendar until, IntervalEnum interval) throws StockServiceException;
+    List<StockQuote> getQuote(@NotNull String symbol, @NotNull Calendar from, @NotNull Calendar until, IntervalEnum interval) throws StockServiceException, IOException;
 
 
 }

@@ -15,4 +15,6 @@ public class ServiceFactory {
     public static PersonService getPersonService(){
         return new DatabasePersonService();
     }
+
+    public static StockService getYahooStockService() {return new YahooStockService();}
 }
