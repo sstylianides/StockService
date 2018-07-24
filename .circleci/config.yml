@@ -8,7 +8,7 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/openjdk:8-jdk
-      - image: circleci/mysql:latest-ram
+      - image: circleci/mysql:8.0.11-ram
     environment:
       - MYSQL_ROOT_PASSWORD: demonstrate420
       - MYSQL_DATABASE: stocks
