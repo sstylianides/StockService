@@ -9,12 +9,11 @@ public class ServiceFactory {
      *
      */
     public static StockService getStockService(){
-        return new DatabaseStockService();
+        return new YahooStockService();
     }
 
     public static PersonService getPersonService(){
         return new DatabasePersonService();
     }
 
-    public static StockService getYahooStockService() {return new YahooStockService();}
 }
