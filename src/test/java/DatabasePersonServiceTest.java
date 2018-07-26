@@ -1,10 +1,8 @@
-import models.Person;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import services.PersonService;
-import services.ServiceFactory;
-import services.StockServiceException;
+
 import util.DatabaseInitializationException;
 import util.DatabaseUtils;
 
