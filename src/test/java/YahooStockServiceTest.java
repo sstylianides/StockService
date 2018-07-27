@@ -25,18 +25,6 @@ public class YahooStockServiceTest {
 
     }
 
-    /**
-     * test GetQuote to make sure that symbol is not null
-     * @result will make sure symbol not null
-     */
-    @Test
-    public void testGetQuote() throws IOException, StockServiceException {
-
-        StockQuote stockQuote = stockService.getQuote("SPY");
-        Assert.assertNotNull(stockQuote);
-
-
-    }
 
 
     /**
