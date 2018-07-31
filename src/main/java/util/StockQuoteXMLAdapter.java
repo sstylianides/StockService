@@ -14,7 +14,19 @@ import java.util.List;
 
 public class StockQuoteXMLAdapter {
 
+    /**
+     * adapter class that helps convert XML to StockQuote objects
+     */
+
     private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+    /**
+     * method that gets XML and converts to StockQuote object
+     *
+     * @param stock input needed from XML
+     * @return a new StockQuote
+     * @throws ParseException if using the service generates an exception
+     */
 
 
     public static StockQuote stockXMLToStockQuote(Stock stock) throws ParseException {
@@ -28,6 +40,14 @@ public class StockQuoteXMLAdapter {
         return new StockQuote(symbol,new BigDecimal(price),cal);
     }
 
+
+    /**
+     * method that gets XML and converts to a list of StockQuote object
+     *
+     * @param stocks input needed from XML
+     * @return a new List of StockQuotes
+     * @throws ParseException if using the service generates an exception
+     */
     public static List<StockQuote> stocksXMLtoStockQuotes(Stocks stocks) throws ParseException{
         List<StockQuote> stockQuotes = new ArrayList<>();
 

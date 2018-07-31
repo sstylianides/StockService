@@ -10,6 +10,13 @@ import java.util.Calendar;
 
 public class StockQuoteApp {
 
+    /**
+     * main method that calls stockService to get new quotes
+     * @throws ParseException if using the service generates an exception.
+     * @throws IOException if if using the API generates an exception
+     * @throws StockServiceException if using the service generates an exception.
+     */
+
     public static void main(String[] args) throws ParseException, StockServiceException, IOException {
 
         String symbol = args[0];

@@ -4,7 +4,7 @@ public class ServiceFactory {
 
 
     /**
-     * @return returns a new services.BasicStockService
+     * @return returns a new services.YahooStockService
      *
      *
      */

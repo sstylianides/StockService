@@ -19,9 +19,23 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
+/**
+ * uses the StockService class to create a servlet and return stock data via a web app
+ */
+
 public class StockSearchServlet extends HttpServlet {
 
     private static StockService stockService = ServiceFactory.getStockService();
+
+    /**
+     * Return the current price for a share of stock  for the given symbol
+     *
+     * @param request initiates a request to the StockService
+     * @param response gets a response from the StockService
+     * @return posts results to stockQuoteResults.jsp
+     * @throws ServletException if using the service generates an exception.
+     * @throws IOException if if using the API generates an exception
+     */
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
 

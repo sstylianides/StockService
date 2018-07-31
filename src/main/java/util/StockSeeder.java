@@ -19,7 +19,20 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.List;
 
+
+/**
+ * class that reads XML and adds the quotes to database
+ */
 public class StockSeeder {
+
+    /**
+     * main method that reads XML and places quotes in database
+     *
+     * @throws ParseException if using the service generates an exception
+     * @throws JAXBException if using the service generates an exception
+     * @throws StockServiceException if using the service generates an exception
+     * @throws DatabaseInitializationException if using the service generates an exception
+     */
 
     public static void main(String args[]) throws JAXBException, ParseException, StockServiceException, DatabaseInitializationException {
         Stocks stocks = StockReader.readStockXML("./src/main/resources/xml/stock_info.xml");
@@ -35,6 +48,9 @@ public class StockSeeder {
 
     }
 
+    /**
+     * method that drops table and creates a new table for the new data from XML
+     */
 
     private static void dropAndCreateTable() throws DatabaseInitializationException {
         Connection connection = null;
@@ -56,6 +72,11 @@ public class StockSeeder {
                     + e.getMessage(), e);
         }
     }
+
+    /**
+     * method that adds the recently retrieved XML data and places it in database
+     * @param stockQuote input needed for method to properly store stock data in DB
+     */
 
     private static void addQuoteToDB(StockQuote stockQuote) throws StockServiceException {
 

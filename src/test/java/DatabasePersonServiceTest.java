@@ -49,6 +49,11 @@ public class DatabasePersonServiceTest {
 
     }
 
+
+    /**
+     * test getStocks
+     * @result will return all the people and their associated stocks in database
+     */
     @Test
     public void testGetStocks() throws StockServiceException {
         PersonService personService = ServiceFactory.getPersonService();
@@ -79,7 +84,10 @@ public class DatabasePersonServiceTest {
     }
 
 
-
+    /**
+     * test addOrUpdatePerson
+     * @result will update all the people in database
+     */
 
     @Test
     public void testaddOrUpdatePerson() throws StockServiceException {
@@ -112,6 +120,12 @@ public class DatabasePersonServiceTest {
         Assert.assertEquals(Arrays.asList(person1, person2, person3), people);
 
     }
+
+
+    /**
+     * test addStockToPerson
+     * @result will add stocks to a person
+     */
 
     @Test
     public void testAddStockToPerson() throws StockServiceException{
